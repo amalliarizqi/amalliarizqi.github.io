@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portofolio Rizqi Amallia Rahma Dani — lulusan Matematika UNY yang mengembangkan keterampilan analisis data menggunakan SQL, Excel, dan Python.">
+<title>Rizqi Amallia | Portofolio Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102653;--navy2:#17386f;--blue:#244c91;--yellow:#ffd83d;--pale:#fff6c9;--bg:#f7f8fc;--ink:#19243a;--muted:#68748a;--line:#e2e7f0;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1120px,90%);margin:auto}
+h1,h2,h3,.brand{font-family:Manrope,sans-serif;line-height:1.2}
+h2{font-size:clamp(1.8rem,4vw,2.55rem);letter-spacing:-1px}
+.section{padding:82px 0}
+.section-head{max-width:650px;margin-bottom:34px}
+.kicker{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-size:.77rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:800;margin-bottom:13px}
+.kicker:before{content:"";width:25px;height:4px;background:var(--yellow);border-radius:5px}
+.section-head p{color:var(--muted);margin-top:12px}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-size:1.15rem;font-weight:800;color:var(--navy);letter-spacing:-.7px}
+.brand b{color:#d3a900}
+.navlinks{display:flex;align-items:center;gap:25px;list-style:none}
+.navlinks a{font-size:.88rem;font-weight:700;color:#47536a}
+.navlinks a:hover{color:var(--blue)}
+.navlinks .navbutton{background:var(--navy);color:white;padding:10px 15px;border-radius:9px}
+.menu{display:none;border:0;background:var(--pale);color:var(--navy);padding:8px 12px;border-radius:9px;font-size:1.15rem}
+.hero{background:var(--navy);color:white;padding:75px 0 82px;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;width:380px;height:380px;border:65px solid rgba(255,216,61,.09);border-radius:50%;right:-140px;top:-180px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:center;position:relative;z-index:1;max-width:900px}
+.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);border-radius:99px;padding:7px 12px;font-size:.79rem;color:#edf2ff;margin-bottom:22px}
+.pill i{width:8px;height:8px;background:var(--yellow);border-radius:50%}
+.hero h1{font-size:clamp(2.6rem,5.5vw,4.6rem);letter-spacing:-2.7px;line-height:1.07;margin-bottom:20px}
+.hero h1 span{color:var(--yellow)}
+.hero-copy>p{max-width:590px;color:#d7e0f2;font-size:1.02rem;margin-bottom:26px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:800;font-size:.9rem;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-yellow{background:var(--yellow);color:var(--navy)}
+.btn-outline{border:1px solid rgba(255,255,255,.35);color:white}
+.hero-note{font-size:.82rem!important;color:#b9c8e2!important;margin:21px 0 0!important}
+.photo-wrap{position:relative;display:flex;align-items:center;justify-content:center;min-height:360px}
+.photo-disc{position:absolute;width:min(315px,80%);aspect-ratio:1;border-radius:50%;background:var(--yellow);transform:translate(12px,12px)}
+.photo-border{position:relative;width:min(300px,78%);aspect-ratio:1;padding:8px;background:white;border-radius:50%;border:3px solid var(--yellow);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.photo{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:50%;background:#e9eef8;display:block}
+.photo-fallback{position:absolute;inset:8px;border-radius:50%;background:#e9eef8;color:var(--navy);display:none;align-items:center;justify-content:center;text-align:center;flex-direction:column;padding:22px;font-weight:800}
+.photo-fallback strong{font-size:2.7rem}
+.photo-fallback small{font-weight:500;font-size:.75rem;margin-top:6px}
+.float{position:absolute;z-index:2;padding:12px 15px;border-radius:12px;background:white;color:var(--navy);box-shadow:0 12px 35px rgba(0,0,0,.16)}
+.float strong{display:block;font-family:Manrope,sans-serif;font-size:1.05rem}
+.float span{display:block;color:var(--muted);font-size:.75rem}
+.float-tools{right:-3px;top:32px;background:var(--yellow)}
+.float-tools span{color:#4e4315}
+.quick{background:var(--yellow);padding:20px 0;color:var(--navy)}
+.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.quick strong{display:block;font-family:Manrope,sans-serif;font-size:1.03rem}
+.quick span{font-size:.81rem}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:center}
+.statbox{background:var(--pale);border:1px solid #f0df84;padding:27px;border-radius:18px}
+.statbox .num{font-family:Manrope,sans-serif;font-size:3.7rem;font-weight:800;line-height:1;color:var(--navy)}
+.statbox h3{margin-top:13px;font-size:1.1rem}
+.statbox p{margin-top:8px;color:#5d5a48;font-size:.9rem}
+.about-copy p{color:var(--muted);margin-bottom:15px}
+.about-copy strong{color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:21px}
+.tag{background:#e9eef8;color:var(--navy);border-radius:7px;padding:6px 10px;font-size:.78rem;font-weight:800}
+.skills-section{background:white}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.skill{background:white;border:1px solid var(--line);border-radius:16px;padding:23px;transition:.2s}
+.skill:hover{transform:translateY(-4px);border-color:#a9b9d7}
+.skill-icon{width:48px;height:48px;display:grid;place-items:center;background:var(--navy);color:var(--yellow);border-radius:12px;font-family:Manrope,sans-serif;font-weight:800;margin-bottom:17px}
+.skill:nth-child(even) .skill-icon{background:var(--yellow);color:var(--navy)}
+.skill h3{font-size:1.12rem;margin-bottom:8px}
+.skill p{color:var(--muted);font-size:.88rem;margin-bottom:15px}
+.level{display:inline-block;border-radius:6px;background:#eef2fa;color:var(--navy);padding:4px 9px;font-size:.73rem;font-weight:800}
+.projects-section{background:#f4f6fb}
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:25px}
+.filter{border:1px solid #d8deea;background:white;color:#526078;border-radius:99px;padding:9px 16px;font-size:.85rem;font-weight:800;cursor:pointer}
+.filter.active,.filter:hover{background:var(--navy);color:white;border-color:var(--navy)}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:19px}
+.project{display:flex;flex-direction:column;background:white;border:1px solid var(--line);border-radius:17px;padding:25px;min-height:275px;transition:.2s}
+.project:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(16,38,83,.08)}
+.project-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}
+.project-type{font-size:.74rem;font-weight:800;color:var(--navy);background:var(--pale);padding:6px 10px;border-radius:6px}
+.project-no{font-family:Manrope,sans-serif;font-size:1.15rem;font-weight:800;color:#b9c2d2}
+.project h3{font-size:1.2rem;margin-bottom:10px}
+.project p{font-size:.89rem;color:var(--muted);margin-bottom:18px}
+.tools{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;margin-bottom:18px}
+.tools span{font-size:.72rem;background:#f0f2f7;color:#4d5870;padding:5px 8px;border-radius:5px;font-weight:700}
+.project-link{color:var(--blue);font-size:.86rem;font-weight:800;align-self:flex-start}
+.project-link:hover{text-decoration:underline}
+.project[hidden]{display:none}
+.timeline{border-left:2px solid #d8e0ef;margin-left:8px;padding-left:27px;max-width:850px}
+.timeline-item{position:relative;padding-bottom:32px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item:before{content:"";position:absolute;left:-35px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--yellow);border:3px solid var(--navy)}
+.date{font-size:.8rem;font-weight:800;color:var(--blue);margin-bottom:7px;display:block}
+.timeline-item h3{font-size:1.13rem;margin-bottom:5px}
+.place{font-size:.87rem;color:var(--muted);margin-bottom:10px}
+.timeline-item ul{padding-left:19px;color:var(--muted);font-size:.89rem}
+.timeline-item li{margin-bottom:6px}
+.education{display:flex;gap:18px;padding:25px;border:1px solid var(--line);border-radius:17px;background:white}
+.edu-icon{width:52px;height:52px;flex-shrink:0;border-radius:13px;background:var(--yellow);color:var(--navy);display:grid;place-items:center;font-size:1.35rem}
+.education h3{font-size:1.15rem;margin-bottom:6px}
+.education p{color:var(--muted);font-size:.9rem}
+.edu-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.edu-tags span{font-size:.76rem;font-weight:800;background:#e9eef8;color:var(--navy);padding:5px 9px;border-radius:6px}
+.contact{padding:75px 0}
+.contact-box{position:relative;overflow:hidden;background:var(--navy);border-radius:22px;color:white;padding:48px}
+.contact-box:after{content:"";position:absolute;width:250px;height:250px;border:40px solid rgba(255,216,61,.12);border-radius:50%;right:-90px;bottom:-150px}
+.contact-inner{position:relative;z-index:1;max-width:650px}
+.contact-box .kicker{color:var(--yellow)}
+.contact-box h2{margin-bottom:14px}
+.contact-box p{color:#d7e0f2;margin-bottom:24px}
+footer{background:white;border-top:1px solid var(--line);padding:23px 0}
+.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.footer p{font-size:.8rem;color:var(--muted)}
+.footer a{font-size:.84rem;color:var(--blue);font-weight:800}
+@media(max-width:850px){.navlinks{gap:13px}.navlinks a{font-size:.8rem}.hero-grid{gap:30px}.about-grid{gap:25px}.skills-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){
+ .section{padding:62px 0}.nav{min-height:65px}.menu{display:block}
+ .navlinks{display:none;position:absolute;top:64px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:18px 5% 23px;flex-direction:column;align-items:stretch;gap:15px}
+ .navlinks.open{display:flex}.navlinks a{font-size:.92rem;display:block}.navlinks .navbutton{text-align:center}
+ .hero{padding:65px 0 70px}.hero-grid{grid-template-columns:1fr;gap:26px}
+ .photo-disc{width:245px}.photo-border{width:230px}.float-tools{right:0;top:12px}
+ .hero h1{font-size:clamp(2.6rem,10vw,3.5rem);letter-spacing:-1.7px}
+ .quick-grid{gap:8px}.quick strong{font-size:.85rem}.quick span{font-size:.7rem}
+ .about-grid{grid-template-columns:1fr}.skills-grid,.project-grid{grid-template-columns:1fr}
+ .contact-box{padding:33px 24px}.education{padding:20px;gap:13px}.footer{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav">
+    <a class="brand" href="#beranda">lia<b>.</b>portofolio</a>
+    <button class="menu" id="menu" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#tentang">Tentang Saya</a></li>
+      <li><a href="#keahlian">Keahlian</a></li>
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#pengalaman">Pengalaman</a></li>
+      <li><a class="navbutton" href="#kontak">Hubungi Saya ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="beranda">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="pill"><i></i> Portofolio Analisis Data</div>
+      <h1>Halo, saya<br><span>Rizqi Amallia.</span></h1>
+      <p>Lulusan S1 Matematika yang tertarik pada analisis data. Saya senang mengolah data, menemukan pola, dan menyajikan informasi secara terstruktur untuk mendukung pengambilan keputusan.</p>
+      <div class="actions">
+        <a class="btn btn-yellow" href="#proyek">Lihat Proyek ↓</a>
+        <a class="btn btn-outline" href="https://github.com/amalliarizqi" target="_blank" rel="noopener noreferrer">Profil GitHub ↗</a>
+      </div>
+      <p class="hero-note">Matematika · Analisis Data · Berorientasi pada Ketelitian</p>
+    </div>
+  </div>
+</section>
+
+<section class="quick">
+  <div class="container quick-grid">
+    <div><strong>S1 Matematika</strong><span>Universitas Negeri Yogyakarta</span></div>
+    <div><strong>Pengalaman BPS</strong><span>Pengolahan dan pemeriksaan data</span></div>
+    <div><strong>SQL · Excel · Python</strong><span>Keahlian yang dikembangkan</span></div>
+  </div>
+</section>
+
+<section class="section" id="tentang">
+  <div class="container">
+    <div class="section-head"><span class="kicker">Tentang Saya</span><h2>Berangkat dari angka, mencari makna dalam data.</h2><p>Mengenal latar belakang, pengalaman, dan minat saya di bidang analisis data.</p></div>
+    <div class="about-grid">
+      <div class="about-photo-wrap photo-wrap">
+        <div class="photo-disc"></div>
+        <div class="photo-border">
+          <!-- Simpan foto bernama foto.jpg sejajar dengan index.html di repository GitHub. -->
+          <img class="photo" id="profilePhoto" src="foto.jpg" alt="Foto profil Rizqi Amallia Rahma Dani">
+          <div class="photo-fallback" id="photoFallback"><strong>👩🏻‍💻</strong>Tambahkan foto profil<small>Unggah foto.jpg ke repository</small></div>
+        </div>
+        <div class="float float-tools"><strong>SQL · Excel</strong><span>Tools analisis data</span></div>
+      </div>
+      <div class="about-copy">
+        <p>Saya merupakan lulusan <strong>Program Studi Matematika, Universitas Negeri Yogyakarta</strong>, yang memiliki ketertarikan untuk mengembangkan karier di bidang analisis data.</p>
+        <p>Melalui pengalaman di <strong>Badan Pusat Statistik (BPS)</strong>, saya terbiasa melakukan input, pemeriksaan, dan pengolahan data secara teliti. Pengalaman tersebut mengajarkan saya pentingnya kualitas data sebelum digunakan untuk analisis.</p>
+        <p>Saat ini, saya terus mengembangkan keterampilan SQL, Microsoft Excel, dan Python melalui pembelajaran mandiri serta pengerjaan proyek portofolio.</p>
+        <div class="tags"><span class="tag">Berpikir Analitis</span><span class="tag">Pemeriksaan Data</span><span class="tag">Pemecahan Masalah</span><span class="tag">Teliti</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section skills-section" id="keahlian">
+  <div class="container">
+    <div class="section-head"><span class="kicker">Keahlian</span><h2>Tools yang sedang saya kembangkan.</h2><p>Dasar keterampilan teknis dan kemampuan yang saya gunakan untuk mengolah informasi secara sistematis.</p></div>
+    <div class="skills-grid">
+      <article class="skill"><div class="skill-icon">SQL</div><h3>SQL</h3><p>Mengambil dan mengolah data menggunakan SELECT, filtering, JOIN, GROUP BY, serta fungsi agregasi.</p><span class="level">Dasar</span></article>
+      <article class="skill"><div class="skill-icon">XL</div><h3>Microsoft Excel</h3><p>Data cleaning, sorting, filtering, fungsi lookup, PivotTable, dan analisis data dasar.</p><span class="level">Dasar</span></article>
+      <article class="skill"><div class="skill-icon">Py</div><h3>Python</h3><p>Dasar pemrograman dan pengolahan data untuk mendukung proses analisis.</p><span class="level">Dasar</span></article>
+      <article class="skill"><div class="skill-icon">∑</div><h3>Matematika & Statistika</h3><p>Penalaran logis, pemahaman pola, perhitungan, dan penyelesaian masalah kuantitatif.</p><span class="level">Fondasi Akademik</span></article>
+      <article class="skill"><div class="skill-icon">QC</div><h3>Pemeriksaan Kualitas Data</h3><p>Memeriksa konsistensi data, mengidentifikasi anomali, dan menjaga ketelitian input.</p><span class="level">Pengalaman Praktis</span></article>
+      <article class="skill"><div class="skill-icon">CV</div><h3>Penyajian Informasi</h3><p>Menyusun informasi dan menyajikan data secara terstruktur agar mudah dipahami.</p><span class="level">Pengalaman Praktis</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="section projects-section" id="proyek">
+  <div class="container">
+    <div class="section-head"><span class="kicker">Portofolio</span><h2>Proyek pilihan saya.</h2><p>Latihan dan proyek akademik untuk menerapkan keterampilan pengolahan, analisis, dan interpretasi data.</p></div>
+    <div class="filters" role="group" aria-label="Filter kategori proyek">
+      <button class="filter active" data-filter="semua">Semua</button>
+      <button class="filter" data-filter="excel">Excel</button>
+      <button class="filter" data-filter="sql">SQL</button>
+      <button class="filter" data-filter="python">Python</button>
+    </div>
+    <div class="project-grid">
+      <article class="project" data-category="excel">
+        <div class="project-top"><span class="project-type">Excel · IBM / Coursera</span><span class="project-no">01</span></div>
+        <h3>Excel Basics for Data Analysis</h3>
+        <p>Proyek pembelajaran yang mencakup persiapan dan pembersihan data serta analisis menggunakan Microsoft Excel.</p>
+        <div class="tools"><span>Microsoft Excel</span><span>Data Cleaning</span><span>Data Analysis</span></div>
+        <!-- Ganti # dengan tautan repository Excel milikmu -->
+        <a class="project-link project-placeholder" href="#">Lihat repository ↗</a>
+      </article>
+      <article class="project" data-category="sql">
+        <div class="project-top"><span class="project-type">SQL</span><span class="project-no">02</span></div>
+        <h3>Superstore Sales Analysis</h3>
+        <p>Proyek latihan analisis dataset Superstore menggunakan query SQL. Tambahkan pertanyaan bisnis, hasil query, dan insight setelah analisis selesai.</p>
+        <div class="tools"><span>SQL</span><span>JOIN</span><span>GROUP BY</span><span>Agregasi</span></div>
+        <!-- Ganti # dengan tautan repository SQL milikmu -->
+        <a class="project-link project-placeholder" href="#">Lihat repository ↗</a>
+      </article>
+      <article class="project" data-category="python">
+        <div class="project-top"><span class="project-type">Dalam Pengembangan</span><span class="project-no">03</span></div>
+        <h3>Analisis Data dengan Python</h3>
+        <p>Tempat untuk proyek Python berikutnya, seperti eksplorasi data, pembersihan dataset, dan analisis menggunakan pandas setelah proyek dikerjakan.</p>
+        <div class="tools"><span>Python</span><span>pandas</span><span>Eksplorasi Data</span></div>
+        <span class="project-link">Segera hadir</span>
+      </article>
+      <article class="project" data-category="python">
+        <div class="project-top"><span class="project-type">Penelitian Akademik</span><span class="project-no">04</span></div>
+        <h3>Pemodelan Matematika dan Simulasi DBD</h3>
+        <p>Penelitian skripsi mengenai model matematika penyebaran DBD dengan kontrol optimal melalui pemasangan kasa pada ventilasi rumah, menggunakan simulasi numerik dengan Python.</p>
+        <div class="tools"><span>Pemodelan Matematika</span><span>Python</span><span>Simulasi Numerik</span></div>
+        <!-- Ganti # dengan tautan kode atau dokumen yang memang siap dibagikan -->
+        <a class="project-link project-placeholder" href="#">Lihat proyek ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pengalaman">
+  <div class="container">
+    <div class="section-head"><span class="kicker">Pengalaman</span><h2>Pengalaman yang membentuk saya.</h2><p>Terlibat dalam kegiatan statistik yang membutuhkan ketelitian, komunikasi, dan kepatuhan terhadap prosedur.</p></div>
+    <div class="timeline">
+      <article class="timeline-item">
+        <span class="date">Juni – Agustus 2026</span>
+        <h3>Petugas Lapangan Sensus Ekonomi 2026</h3>
+        <div class="place">Badan Pusat Statistik (BPS) · Kabupaten Magelang</div>
+        <ul><li>Melakukan pendataan melalui wawancara langsung dengan pelaku usaha atau rumah tangga sesuai penugasan.</li><li>Melakukan input hasil pendataan ke sistem yang digunakan dalam kegiatan sensus.</li><li>Menjaga ketelitian data serta mengikuti prosedur dan target kerja harian.</li></ul>
+      </article>
+      <article class="timeline-item">
+        <span class="date">Juni – Agustus 2024</span>
+        <h3>Praktik Kerja Lapangan</h3>
+        <div class="place">Badan Pusat Statistik (BPS) · Kabupaten Kulon Progo</div>
+        <ul><li>Melakukan input lebih dari 50 hasil kuesioner terkait kegiatan Sensus Pertanian.</li><li>Membantu pemeriksaan data menggunakan Microsoft Excel untuk mengidentifikasi ketidaksesuaian atau anomali.</li><li>Membuat booklet dan infografik menggunakan Canva untuk menyajikan informasi secara visual.</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pendidikan">
+  <div class="container">
+    <div class="section-head"><span class="kicker">Pendidikan</span><h2>Fondasi akademik.</h2></div>
+    <div class="education">
+      <div class="edu-icon">🎓</div>
+      <div><h3>Universitas Negeri Yogyakarta</h3><p>S1 Matematika</p><p>Latar belakang akademik dalam penalaran logis, pemodelan matematika, dan penyelesaian masalah kuantitatif.</p><div class="edu-tags"><span>Lulusan Matematika</span><span>Fresh Graduate</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontak">
+  <div class="container">
+    <div class="contact-box"><div class="contact-inner">
+      <span class="kicker">Mari Terhubung</span>
+      <h2>Mengolah data menjadi insight yang bermakna.</h2>
+      <p>Saya terbuka untuk kesempatan magang maupun pekerjaan di bidang analisis data. Silakan kunjungi profil GitHub saya untuk melihat proyek dan perkembangan pembelajaran.</p>
+      <a class="btn btn-yellow" href="https://github.com/amalliarizqi" target="_blank" rel="noopener noreferrer">Kunjungi GitHub ↗</a>
+    </div></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container footer"><p>© <span id="year"></span> Rizqi Amallia Rahma Dani · Dibuat dengan penuh perhatian.</p><a href="https://github.com/amalliarizqi" target="_blank" rel="noopener noreferrer">Profil GitHub ↗</a></div></footer>
+
+<script>
+const photo = document.getElementById("profilePhoto");
+const fallback = document.getElementById("photoFallback");
+function showFallback(){photo.style.display="none";fallback.style.display="flex";}
+photo.addEventListener("error",showFallback);
+photo.addEventListener("load",()=>{photo.style.display="block";fallback.style.display="none";});
+if(photo.complete && photo.naturalWidth===0) showFallback();
+
+const menu=document.getElementById("menu");
+const navlinks=document.getElementById("navlinks");
+menu.addEventListener("click",()=>{
+  const open=navlinks.classList.toggle("open");
+  menu.setAttribute("aria-expanded",String(open));
+  menu.textContent=open?"✕":"☰";
+});
+navlinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+  navlinks.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="☰";
+}));
+
+const filters=document.querySelectorAll(".filter");
+const projects=document.querySelectorAll(".project");
+filters.forEach(button=>button.addEventListener("click",()=>{
+  filters.forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  const selected=button.dataset.filter;
+  projects.forEach(project=>{
+    project.hidden=selected!=="semua" && project.dataset.category!==selected;
+  });
+}));
+
+document.querySelectorAll(".project-placeholder").forEach(link=>{
+  link.addEventListener("click",event=>{
+    if(link.getAttribute("href")==="#"){
+      event.preventDefault();
+      alert("Ganti tanda # pada kode dengan URL repository proyek GitHub kamu terlebih dahulu.");
+    }
+  });
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
