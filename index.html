@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Rizqi Amallia Rahma Dani - Data Analytics">
+  <title>Rizqi Amallia | Data Analytics Portfolio</title>
+  <style>
+    :root {
+      --navy: #174ea6;
+      --blue: #2868c7;
+      --blue-2: #4b83d6;
+      --yellow: #ffd83d;
+      --yellow-soft: #fff8d6;
+      --ink: #24344f;
+      --muted: #71809a;
+      --paper: #ffffff;
+      --white: #ffffff;
+      --line: #eaf0f8;
+      --shadow: 0 18px 45px rgba(40, 104, 199, .09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      color: var(--navy);
+      font-weight: 850;
+      letter-spacing: -.5px;
+      font-size: 1.12rem;
+    }
+    .brand span { color: var(--blue-2); }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a { color: #53627a; font-size: .92rem; font-weight: 650; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--navy) !important;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-weight: 800 !important;
+    }
+
+    .hero {
+      overflow: hidden;
+      position: relative;
+      color: var(--navy);
+      background: linear-gradient(120deg, #eaf3ff 0%, #f5f9ff 72%, #fff9df 100%);
+      padding: 92px 0 100px;
+    }
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::before {
+      width: 360px; height: 360px;
+      right: -90px; top: -150px;
+      border: 55px solid rgba(255,212,59,.25);
+    }
+    .hero::after {
+      width: 170px; height: 170px;
+      right: 18%; bottom: -110px;
+      background: rgba(255,212,59,.22);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 760px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .78rem;
+      font-weight: 850;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 3px; background: var(--yellow); }
+    h1 {
+      margin: 18px 0 16px;
+      max-width: 760px;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.06;
+      letter-spacing: -2.8px;
+    }
+    h1 .highlight { color: var(--yellow); }
+    .hero p {
+      max-width: 650px;
+      color: #536b91;
+      font-size: 1.08rem;
+      margin: 0 0 30px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.16); }
+    .btn-yellow { background: var(--yellow); color: var(--navy); }
+    .btn-outline { border: 1px solid #b9cdea; color: var(--navy); }
+
+    section { padding: 78px 0; }
+    .section-kicker {
+      color: var(--blue-2);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .76rem;
+      font-weight: 850;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 0 0 14px;
+    }
+    .section-desc { color: var(--muted); max-width: 650px; margin: 0; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 38px;
+      align-items: center;
+    }
+    .about-copy p { color: #53627a; margin: 0 0 14px; }
+    .about-note {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 27px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .about-note::before {
+      content: "";
+      position: absolute;
+      width: 54px; height: 7px;
+      background: var(--yellow);
+      border-radius: 10px;
+      top: 0; left: 27px;
+    }
+    .about-note strong { display: block; color: var(--navy); font-size: 1.05rem; margin: 8px 0 6px; }
+    .about-note p { color: var(--muted); margin: 0; font-size: .94rem; }
+
+    .skills { background: #f3f7ff; }
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .skill {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      font-weight: 750;
+      color: var(--navy);
+      box-shadow: 0 7px 20px rgba(16,42,86,.04);
+    }
+    .skill small { display: block; color: var(--muted); font-weight: 500; margin-top: 3px; }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 32px;
+    }
+    .project-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(16,42,86,.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .project-top {
+      min-height: 145px;
+      padding: 24px;
+      background: linear-gradient(135deg, #dceaff, #edf4ff);
+      color: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-top::after {
+      content: "";
+      width: 150px; height: 150px;
+      border: 24px solid rgba(255,212,59,.55);
+      border-radius: 50%;
+      position: absolute; right: -35px; top: -65px;
+    }
+    .project-number { color: var(--blue); font-size: .78rem; font-weight: 850; letter-spacing: 1.5px; }
+    .project-top h3 { position: relative; z-index: 1; margin: 12px 0 0; font-size: 1.35rem; line-height: 1.3; max-width: 420px; }
+    .project-body { padding: 23px 24px 24px; display: flex; flex-direction: column; flex: 1; }
+    .project-body p { color: var(--muted); margin: 0 0 18px; font-size: .95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .tag {
+      background: #edf3fc;
+      color: var(--blue);
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 750;
+    }
+    .project-link {
+      color: var(--blue);
+      font-weight: 850;
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .project-link:hover { color: var(--navy); }
+    .project-link span { color: #d3a900; font-size: 1.15rem; }
+
+    .education { background: #f3f7ff; }
+    .education-card {
+      margin-top: 28px;
+      background: white;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--yellow);
+      border-radius: 16px;
+      padding: 23px 25px;
+      box-shadow: 0 8px 24px rgba(16,42,86,.05);
+    }
+    .education-card h3 { margin: 0 0 4px; color: var(--navy); }
+    .education-card p { margin: 0; color: var(--muted); }
+
+    .contact {
+      background: #eaf2ff;
+      color: var(--navy);
+      text-align: center;
+      padding: 76px 0;
+    }
+    .contact .section-kicker { color: var(--yellow); }
+    .contact .section-title { color: var(--navy); }
+    .contact .section-desc { color: #536b91; margin: 0 auto 25px; }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+    .contact-links a {
+      border: 1px solid #b9cdea;
+      color: var(--navy);
+      border-radius: 999px;
+      padding: 10px 17px;
+      font-weight: 700;
+    }
+    .contact-links a:hover { background: var(--yellow); border-color: var(--yellow); color: var(--navy); }
+    footer { background: #dce9fb; color: #526887; text-align: center; padding: 18px; font-size: .85rem; }
+
+    @media (max-width: 760px) {
+      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; gap: 10px; }
+      .nav-links { width: 100%; gap: 16px; overflow-x: auto; padding-bottom: 3px; }
+      .nav-links a { white-space: nowrap; font-size: .85rem; }
+      .nav-cta { display: none; }
+      .hero { padding: 70px 0 78px; }
+      .about-grid, .project-grid { grid-template-columns: 1fr; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 60px 0; }
+    }
+    @media (max-width: 420px) {
+      .container { width: min(100% - 30px, 1100px); }
+      h1 { letter-spacing: -1.8px; }
+      .skill-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .skill { padding: 14px; font-size: .9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">Rizqi<span>.</span></a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#about">Tentang</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Pendidikan</a>
+        <a class="nav-cta" href="#contact">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="eyebrow">Data Analytics Portfolio</div>
+        <h1>Hi, I'm Rizqi.<br><span class="highlight">Turning data</span> into insight.</h1>
+        <p>
+          Fresh graduate S1 Matematika Universitas Negeri Yogyakarta yang memiliki
+          ketertarikan pada bidang Data Analytics. Memiliki kemampuan dasar dalam
+          pengolahan dan analisis data menggunakan Excel, SQL, dan Python.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-yellow" href="#projects">Lihat Project</a>
+          <a class="btn btn-outline" href="https://github.com/amalliarizqi" target="_blank" rel="noopener">Kunjungi GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <div class="section-kicker">About me</div>
+          <h2 class="section-title">Mengenal saya lebih dekat</h2>
+          <p>
+            Saya merupakan lulusan S1 Matematika Universitas Negeri Yogyakarta.
+            Latar belakang matematika membentuk kemampuan saya dalam berpikir logis,
+            analitis, sistematis, dan teliti.
+          </p>
+          <p>
+            Saya memiliki pengalaman dalam pengumpulan, pemeriksaan, pengolahan,
+            dan penyajian data melalui kegiatan di Badan Pusat Statistik. Saat ini,
+            saya terus mengembangkan kemampuan Data Analytics melalui berbagai
+            project menggunakan SQL, Excel, Python, dan tools visualisasi data.
+          </p>
+        </div>
+        <aside class="about-note">
+          <strong>My approach</strong>
+          <p>Mengolah data dengan teliti, memahami pola, lalu menyajikan informasi secara terstruktur agar lebih mudah dipahami.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="section-kicker">What I use</div>
+        <h2 class="section-title">Skills & Tools</h2>
+        <p class="section-desc">Tools yang saya gunakan dan kembangkan untuk pengolahan, analisis, serta visualisasi data.</p>
+        <div class="skill-grid">
+          <div class="skill">SQL<small>Query, JOIN, GROUP BY, Aggregation</small></div>
+          <div class="skill">Microsoft Excel<small>Data cleaning, lookup, pivot table</small></div>
+          <div class="skill">Python<small>Pandas dan analisis data dasar</small></div>
+          <div class="skill">Power BI<small>Data visualization</small></div>
+          <div class="skill">Tableau<small>Dashboard & visualization</small></div>
+          <div class="skill">Looker Studio<small>Dashboard & reporting</small></div>
+          <div class="skill">Microsoft Office<small>Word & PowerPoint</small></div>
+          <div class="skill">Canva<small>Infographic & presentation</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-kicker">Selected works</div>
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-desc">Beberapa project latihan dan analisis data yang saya kerjakan.</p>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-number">PROJECT 01 · SQL</div>
+              <h3>Data Analysis for Retail: Sales Performance Report</h3>
+            </div>
+            <div class="project-body">
+              <p>
+                Analisis data transaksi retail untuk mengevaluasi performa penjualan,
+                efektivitas promosi, dan karakteristik pelanggan menggunakan SQL.
+              </p>
+              <div class="tags">
+                <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Data Analysis</span>
+              </div>
+              <!-- Ganti # dengan URL repository SQL milikmu -->
+              <a class="project-link" href="https://github.com/amalliarizqi" target="_blank" rel="noopener">
+                Lihat repository <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-number">PROJECT 02 · EXCEL</div>
+              <h3>Excel Basics for Data Analysis</h3>
+            </div>
+            <div class="project-body">
+              <p>
+                Project dari kursus IBM di Coursera yang mencakup proses data cleaning,
+                persiapan data, serta analisis menggunakan fitur dan pivot table Excel.
+              </p>
+              <div class="tags">
+                <span class="tag">Microsoft Excel</span><span class="tag">Data Cleaning</span><span class="tag">Pivot Table</span>
+              </div>
+              <!-- Ganti # dengan URL repository Excel milikmu -->
+              <a class="project-link" href="https://github.com/amalliarizqi" target="_blank" rel="noopener">
+                Lihat repository <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- DUPLIKAT article.project-card ini untuk menambahkan project berikutnya -->
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-number">PROJECT 03 · DASHBOARD</div>
+              <h3>Data Visualization & Dashboard</h3>
+            </div>
+            <div class="project-body">
+              <p>
+                Tambahkan deskripsi singkat dashboard yang sudah kamu buat, misalnya
+                tujuan analisis, insight utama, dan tools yang digunakan.
+              </p>
+              <div class="tags">
+                <span class="tag">Power BI / Tableau</span><span class="tag">Dashboard</span>
+              </div>
+              <!-- Ganti URL di bawah dengan repository project dashboard -->
+              <a class="project-link" href="https://github.com/amalliarizqi" target="_blank" rel="noopener">
+                Lihat repository <span>↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="education" id="education">
+      <div class="container">
+        <div class="section-kicker">Education</div>
+        <h2 class="section-title">Pendidikan</h2>
+        <div class="education-card">
+          <h3>Universitas Negeri Yogyakarta</h3>
+          <p>S1 Matematika · 2022–2026</p>
+          <p style="margin-top:10px">
+            Skripsi: Model SIRS-SIW untuk Demam Berdarah Dengue (DBD) dengan
+            Kontrol Optimal melalui Pemasangan Kasa pada Ventilasi Rumah.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-kicker">Get in touch</div>
+        <h2 class="section-title">Let's connect!</h2>
+        <p class="section-desc">Terbuka untuk kesempatan dan kolaborasi di bidang Data Analytics.</p>
+        <div class="contact-links">
+          <a href="mailto:rizqiamalia004@gmail.com">Email</a>
+          <a href="https://github.com/amalliarizqi" target="_blank" rel="noopener">GitHub ↗</a>
+          <!-- Tambahkan URL LinkedIn jika ingin ditampilkan -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Rizqi Amallia Rahma Dani · Built with HTML & CSS
+  </footer>
+</body>
+</html>
